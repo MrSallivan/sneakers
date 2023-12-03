@@ -1,3 +1,6 @@
+* {
+  font-family: "Inter", system-ui;
+}
 body {
   margin: 0;
   font-family: "Inter", system-ui;
@@ -31,9 +34,9 @@ header {
   padding: 30px;
   width: 210px;
   border-radius: 40px;
-	span{
-		font-size: 12px;
-	}
+  span {
+    font-size: 12px;
+  }
   h5 {
     font-weight: 400;
     font-size: 14px;
@@ -47,4 +50,15 @@ header {
   height: 32px;
   width: 32px;
   cursor: pointer;
+}
+.search-block {
+  border: 1px solid #f3f3f3;
+	border-radius: 10px;
+	padding: 0 15px;
+  input {
+		width: 200px;
+    border: 0;
+    padding: 13px;
+    font-size: 16px;
+  }
 }
