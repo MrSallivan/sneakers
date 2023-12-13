@@ -24,8 +24,8 @@ function App() {
         </div>
       </div>
     </div>
-		1
   )
 }
 
 export default App
+
