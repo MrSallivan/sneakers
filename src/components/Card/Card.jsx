@@ -1,6 +1,9 @@
 import React from "react"
 
 const Card = ({ title, price, image }) => {
+  const onClickButton = () => {
+    alert(title)
+  }
   return (
     <div className="card">
       <div className="favorite">
@@ -13,7 +16,7 @@ const Card = ({ title, price, image }) => {
           <span>Цена: </span>
           <b>{price} руб.</b>
         </div>
-        <button className="button">
+        <button className="button" onClick={onClickButton}>
           <img src="../img/plus.svg" alt="plus button" width={11} height={11} />
         </button>
       </div>
