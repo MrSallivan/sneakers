@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({onClickCart}) => {
 	return (
     <header className="d-flex justify-between align-center p-40">
       <div className="d-flex align-centr">
@@ -11,7 +11,7 @@ const Header = () => {
         </div>
       </div>
       <ul className="d-flex">
-        <li className="mr-30">
+        <li className="mr-30 cu-p" onClick={onClickCart}>
           <img src="/img/cart.svg" alt="cart logo" width={18} height={18} />
           <span>1205 руб.</span>
         </li>
