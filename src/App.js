@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Card from "./components/Card"
 import Header from "./components/Header"
 import Drawer from "./components/Drawer"
@@ -6,11 +6,17 @@ import Drawer from "./components/Drawer"
 function App() {
   const [items, setItems] = useState([])
   const [cartOpened, setCartOpened] = useState(false)
+  const [cartItems, setCartItems] = useState([])
 
-  fetch("https://655b5afcab37729791a8f7f5.mockapi.io/sneakers")
-    .then((data) => data.json())
-    .then((json) => setItems(json))
+  useEffect(() => {
+    fetch("https://655b5afcab37729791a8f7f5.mockapi.io/sneakers")
+      .then((data) => data.json())
+      .then((json) => setItems(json))
+  }, [])
 
+	const onAddToCart = ()=>{
+		alert('1,2,3')
+	}
   return (
     <div className="wrapper clear">
       {cartOpened && (
@@ -18,6 +24,7 @@ function App() {
           onClose={() => {
             setCartOpened(false)
           }}
+          items={cartItems}
         />
       )}
       <Header
@@ -40,6 +47,8 @@ function App() {
               title={item.name}
               price={item.price}
               image={item.image}
+              onFavorite={() => console.log("Добавили в закладки")}
+							onPlus={(obj)=>console.log(obj)}
             />
           ))}
         </div>
