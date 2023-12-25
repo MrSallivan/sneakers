@@ -18,9 +18,16 @@ function App() {
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "visible")
 
-  const onAddToCart = () => {
-    alert("1,2,3")
+  const onAddToCart = (obj) => {
+    // if (!cartItems.includes(obj)) {
+    //   return setCartItems((prev) => [...prev, obj])
+    // } else {
+    //   let delItem = obj
+		// 	let rez = cartItems.find((element) => element !== delItem)
+    //   setCartItems(rez)
+    // }
   }
+
   return (
     <div className="wrapper clear">
       {cartOpened && (
@@ -52,7 +59,7 @@ function App() {
               price={item.price}
               image={item.image}
               onFavorite={() => console.log("Добавили в закладки")}
-              onPlus={(obj) => console.log(obj)}
+              onPlus={(item) => onAddToCart(item)}
             />
           ))}
         </div>
