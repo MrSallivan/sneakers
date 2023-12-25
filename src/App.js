@@ -14,9 +14,13 @@ function App() {
       .then((json) => setItems(json))
   }, [])
 
-	const onAddToCart = ()=>{
-		alert('1,2,3')
-	}
+  cartOpened
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "visible")
+
+  const onAddToCart = () => {
+    alert("1,2,3")
+  }
   return (
     <div className="wrapper clear">
       {cartOpened && (
@@ -48,7 +52,7 @@ function App() {
               price={item.price}
               image={item.image}
               onFavorite={() => console.log("Добавили в закладки")}
-							onPlus={(obj)=>console.log(obj)}
+              onPlus={(obj) => console.log(obj)}
             />
           ))}
         </div>
