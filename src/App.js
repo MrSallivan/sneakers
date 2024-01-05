@@ -17,7 +17,7 @@ function App() {
     axios
       .get("https://655b5afcab37729791a8f7f5.mockapi.io/sneakers")
       .then((res) => {
-        setItems(res.data)
+        setItems(res.data.splice(1))
       })
   }, [])
 
@@ -26,11 +26,11 @@ function App() {
     : (document.body.style.overflow = "visible")
 
   const onAddToCart = (obj) => {
-		axios
-      .post("https://655b5afcab37729791a8f7f5.mockapi.io/sneakers")
-      .then((res) => {
-        setItems(res.data)
-      })
+		// axios
+    //   .post("https://655b5afcab37729791a8f7f5.mockapi.io/sneakers")
+    //   .then((res) => {
+    //     setItems(res.data.splice(1))
+    //   })
     setCartItems((prev) => [...prev, obj])
   }
 
