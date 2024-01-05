@@ -15,8 +15,8 @@ const Drawer = ({ onClose, items = [] }) => {
           />
         </h2>
         <div className="items">
-          {items.map((obj) => (
-            <div className="cartItem d-flex align-center mb-20">
+          {items.map((obj, index) => (
+            <div key={index} className="cartItem d-flex align-center mb-20">
               <div
                 style={{ backgroundImage: `url(${obj.image})` }}
                 className="cartItemImg"
